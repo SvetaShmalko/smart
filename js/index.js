@@ -8,3 +8,18 @@ sm1.addDevice(ac2);
 
 const r1 = new RobotHoover("robot", new Mode(["dry", "wet"]));
 sm1.addDevice(r1);
+
+sm1.delayOn(
+    "robot", 
+    1000, 
+    () => { sm1.delayOff(
+        "robot",
+        1000,
+        () => console.log("off"))}
+        );
+/*
+let key = setInterval(() => {console.log("hello world")}, 1000);
+setInterval(() => clearTimeout(key), 5000);
+*/
+
+

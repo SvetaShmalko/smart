@@ -39,10 +39,24 @@ class SmartHouse{
 			 () => {
 				 device.on();
 				 callback();
+				 console.log(device.name, device.state);
 			 }
 			 , delay
 		 )
 	}
+
+	delayOff(name, delay, callback) {
+		const offDevice  = this.getDeviceByName(name); 
+		 setTimeout(
+			 () => {
+				offDevice.off();
+				 callback();
+				 console.log(offDevice.name, offDevice.state);
+			 }
+			 , delay
+		 )
+	}
+
 }
 
 //////////////////////////////////////
