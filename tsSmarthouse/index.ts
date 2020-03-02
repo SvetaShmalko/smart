@@ -46,6 +46,8 @@ interface IMode {
 
     getCurrent(): string
     getModes(): string[]
+    previous(): void
+    next(): void
 }
 
 class Mode implements IMode{
@@ -83,7 +85,7 @@ class Mode implements IMode{
 }
 
 class AirCleaner extends ADevice{
-    protected modes: Mode;
+    protected modes: IMode;
     protected power: number = 1;
     public state: boolean = false;
 
