@@ -1,8 +1,8 @@
 "use strict";
-class AirCleaner extends ADevice {
+class RobotHoover extends ADevice {
     constructor(name, modes) {
         super(name);
-        this.power = 1;
+        this.waterTank = false;
         this.modes = modes;
     }
     getModes() {
@@ -17,17 +17,10 @@ class AirCleaner extends ADevice {
     previousMode() {
         this.modes.previous();
     }
-    getPower() {
-        return this.power;
+    setWater() {
+        this.waterTank = true;
     }
-    incresePower() {
-        if (this.power < 5) {
-            this.power++;
-        }
-    }
-    decreasePower() {
-        if (this.power > 1) {
-            this.power--;
-        }
+    waterOut() {
+        this.waterTank = false;
     }
 }

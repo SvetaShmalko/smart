@@ -1,6 +1,6 @@
 class Mode implements IMode {
-    public modes: string[];
-    public current: number = 0;
+    private modes: string[];
+    private current: number = 0;
     constructor(modes: string[]) {
         this.modes = modes;
     }

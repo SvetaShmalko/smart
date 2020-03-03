@@ -1,26 +1,24 @@
 abstract class ADevice implements IDevice {
-    name: string;
-    abstract state: boolean;
+    private name: string;
+    private state: boolean;
     constructor(name: string) {
         this.name = name;
-    }
-    abstract getModes(): string[];
-    abstract getCurrent(): string;
-    abstract nextMode(): void;
-    abstract previousMode(): void;
-    on() {
-        return this.state = true;
-    }
-    off() {
-        return this.state = false;
-    }
-    setName(name: string) {
-        this.name = name;
+        this.state = false;
     }
     getName() {
         return this.name;
     }
+    setName(name: string) {
+        this.name = name;
+    }
     getState() {
         return this.state;
     }
+    on() {
+        this.state = true;
+    }
+    off() {
+        this.state = false;
+    }
+    
 }

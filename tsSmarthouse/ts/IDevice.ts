@@ -1,7 +1,7 @@
 interface IDevice {
-    name: string;
-    state: boolean;
-    on(): boolean;
-    off(): boolean;
+    getName(): string;
+    setName(name: string): void;
     getState(): boolean;
+    on(): void;
+    off(): void;
 }
