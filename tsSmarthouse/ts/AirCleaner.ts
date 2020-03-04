@@ -1,32 +1,31 @@
 class AirCleaner extends ADevice {
     private modes: IMode;
     private power: number = 1;
-   
-    constructor(name: string, modes: IMode) {
+    public constructor(name: string, modes: IMode) {
         super(name);
         this.modes = modes;
     }
-    getModes() {
+    public getModes() {
         return this.modes.getModes();
     }
-    getCurrent() {
+    public getCurrent() {
         return this.modes.getCurrent();
     }
-    nextMode() {
+    public nextMode() {
         this.modes.next();
     }
-    previousMode() {
+    public previousMode() {
         this.modes.previous();
     }
-    getPower() {
+    public getPower() {
         return this.power;
     }
-    incresePower() {
+    public incresePower() {
         if (this.power < 5) {
             this.power++;
         }
     }
-    decreasePower() {
+    public decreasePower() {
         if (this.power > 1) {
             this.power--;
         }

@@ -1,4 +1,3 @@
-"use strict";
 class ADevice {
     constructor(name) {
         this.name = name;

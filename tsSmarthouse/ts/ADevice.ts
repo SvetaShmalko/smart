@@ -1,23 +1,23 @@
 abstract class ADevice implements IDevice {
     private name: string;
     private state: boolean;
-    constructor(name: string) {
+    public constructor(name: string) {
         this.name = name;
         this.state = false;
     }
-    getName() {
+    public getName() {
         return this.name;
     }
-    setName(name: string) {
+    public setName(name: string) {
         this.name = name;
     }
-    getState() {
+    public getState() {
         return this.state;
     }
-    on() {
+    public on() {
         this.state = true;
     }
-    off() {
+    public off() {
         this.state = false;
     }
     

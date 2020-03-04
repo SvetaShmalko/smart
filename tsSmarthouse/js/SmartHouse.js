@@ -1,4 +1,3 @@
-"use strict";
 class SmartHouse {
     constructor(name) {
         this.name = name;
@@ -28,20 +27,14 @@ class SmartHouse {
     offAllDevice() {
         this.devices.forEach((device) => device.off());
     }
-    delayOn(name, delay, callback) {
-        const device = this.getDeviceByName(name);
-        setTimeout(() => {
-            device.on();
-            callback();
-            console.log(device.name, device.state);
-        }, delay);
+    delayOn(name, delay) {
+        return new Promise((resolve) => {
+            setTimeout(resolve, delay);
+        }).then(() => this.getDeviceByName(name).on());
     }
-    delayOff(name, delay, callback) {
-        const offDevice = this.getDeviceByName(name);
-        setTimeout(() => {
-            offDevice.off();
-            callback();
-            console.log(offDevice.name, offDevice.state);
-        }, delay);
+    delayOff(name, delay) {
+        return new Promise((resolve) => {
+            setTimeout(resolve, delay);
+        }).then(() => this.getDeviceByName(name).off());
     }
 }

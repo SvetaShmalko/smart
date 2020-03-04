@@ -1,4 +1,3 @@
-"use strict";
 class AirCleaner extends ADevice {
     constructor(name, modes) {
         super(name);

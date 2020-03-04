@@ -1,4 +1,3 @@
-"use strict";
 class Mode {
     constructor(modes) {
         this.current = 0;

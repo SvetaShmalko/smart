@@ -1,6 +1,7 @@
 interface IMode {
-    getCurrent(): string;
-    getModes(): string[];
-    previous(): void;
-    next(): void;
+    getCurrent(): string
+    getModes(): string[]
+    next(): void
+    previous(): void
+    
 }

@@ -1,4 +1,3 @@
-"use strict";
 class RobotHoover extends ADevice {
     constructor(name, modes) {
         super(name);

@@ -1,32 +1,32 @@
 class RobotHoover extends ADevice{
     private modes: IMode;
     private waterTank: boolean = false;
-    constructor(name: string, modes: IMode) {
+    public constructor(name: string, modes: IMode) {
         super(name);
         this.modes = modes;
     }
 
-    getModes() {
+    public getModes() {
         return this.modes.getModes();
     }
 
-    getCurrent() {
+    public getCurrent() {
         return this.modes.getCurrent();
     }
 
-    nextMode() {
+    public nextMode() {
         this.modes.next();
     }
 
-    previousMode() {
+    public previousMode() {
         this.modes.previous();
     }
 
-    setWater() {
+    public setWater() {
 		this.waterTank = true;
 	}
 
-	waterOut() {
+	public waterOut() {
 		this.waterTank = false;
 	}
 }
