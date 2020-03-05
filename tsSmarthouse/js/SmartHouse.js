@@ -27,14 +27,20 @@ class SmartHouse {
     offAllDevice() {
         this.devices.forEach((device) => device.off());
     }
-    delayOn(name, delay) {
-        return new Promise((resolve) => {
-            setTimeout(resolve, delay);
-        }).then(() => this.getDeviceByName(name).on());
+    async delayOn(name, delay) {
+        await new Promise((resolve) => {
+            setTimeout(() => {
+                this.getDeviceByName(name).on();
+                resolve();
+            }, delay);
+        });
     }
-    delayOff(name, delay) {
-        return new Promise((resolve) => {
-            setTimeout(resolve, delay);
-        }).then(() => this.getDeviceByName(name).off());
+    async delayOff(name, delay) {
+        await new Promise((resolve) => {
+            setTimeout(() => {
+                this.getDeviceByName(name).off();
+                resolve();
+            }, delay);
+        });
     }
 }

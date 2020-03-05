@@ -1,6 +1,6 @@
 class Mode implements IMode {
-    private modes: string[];
-    private current: number = 0;
+    private modes: string[]
+    private current: number = 0
     public constructor(modes: string[]) {
         this.modes = modes;
     }
@@ -15,8 +15,7 @@ class Mode implements IMode {
     public next() {
         if (this.current < this.modes.length - 1) {
             this.current++;
-        }
-        else {
+        } else {
             this.current = 0;
         }
     }
@@ -24,8 +23,7 @@ class Mode implements IMode {
     public previous() {
         if (this.current > 0) {
             this.current--;
-        }
-        else {
+        } else {
             this.current = this.modes.length - 1;
         }
     }
